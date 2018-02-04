@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+RewriteRule .* ? [F,L]
+RewriteCond %{HTTP_HOST} ^site\.com$ [NC]
+RewriteRule ^(.*)$ http://www.site.com/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/index
+RewriteRule ^(.*)index$ http://www.site.com/$1 [R=301,L]
